@@ -1,0 +1,41 @@
+<odoo>
+    <record id="action_scraped_blog" model="ir.actions.act_window">
+        <field name="name">Scraped Blogs</field>
+        <field name="res_model">scraped.blog</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_scraped_blog_tree" model="ir.ui.view">
+        <field name="name">scraped.blog.tree</field>
+        <field name="model">scraped.blog</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_scraped_blog_form" model="ir.ui.view">
+        <field name="name">scraped.blog.form</field>
+        <field name="model">scraped.blog</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="title"/>
+
+                    <field name="source_url"/>
+                    <field name="date_published"/>
+                    <field name="status"/>
+                </group>
+            </form>
+        </field>
+    </record>
+     <record id="action_scraped_blog" model="ir.actions.act_window">
+        <field name="name">Scraped Blogs</field>
+        <field name="res_model">scraped.blog</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_scraping_blog" name="Blogs" parent="menu_scraping_root" action="action_scraped_blog"/>
+</odoo>

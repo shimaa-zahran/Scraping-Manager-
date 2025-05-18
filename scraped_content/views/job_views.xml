@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_scraped_job_tree" model="ir.ui.view">
+        <field name="name">scraped.job.tree</field>
+        <field name="model">scraped.job</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_name"/>
+                <field name="location"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_scraped_job_form" model="ir.ui.view">
+        <field name="name">scraped.job.form</field>
+        <field name="model">scraped.job</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="company_name"/>
+                    <field name="company_logo_url"/>
+                    <field name="location"/>
+                    <field name="source_url"/>
+                    <field name="date_posted"/>
+                    <field name="status"/>
+                </group>
+            </form>
+        </field>
+    </record>
+      <record id="action_scraped_job" model="ir.actions.act_window">
+        <field name="name">Scraped Jobs</field>
+        <field name="res_model">scraped.job</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_scraping_root" name="Scraping Manager"/>
+    <menuitem id="menu_scraped_job" name="Jobs" parent="menu_scraping_root" action="action_scraped_job"/>
+</odoo>

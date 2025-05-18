@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Action to open the page model -->
+    <record id="action_scraped_page" model="ir.actions.act_window">
+        <field name="name">Scraped Pages</field>
+        <field name="res_model">scraped.page</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="view_scraped_page_tree" model="ir.ui.view">
+        <field name="name">scraped.page.tree</field>
+        <field name="model">scraped.page</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="content"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_scraped_page_form" model="ir.ui.view">
+        <field name="name">scraped.page.form</field>
+        <field name="model">scraped.page</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="content"/>
+                        <field name="source_url"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+      <record id="action_scraped_page" model="ir.actions.act_window">
+        <field name="name">Scraped Page</field>
+        <field name="res_model">scraped.page</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu entry under Scraping Manager -->
+    <menuitem id="menu_scraping_page" name="Pages"
+              parent="menu_scraping_root"
+              action="action_scraped_page"/>
+</odoo>
